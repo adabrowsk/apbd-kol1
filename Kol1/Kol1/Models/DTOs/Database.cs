@@ -16,20 +16,6 @@ public class ApplicationDbContext : DbContext
     {
         modelBuilder.Entity<BookAuthor>()
             .HasKey(ba => new { ba.BookId, ba.AuthorId });
- 
-        /*modelBuilder.Entity<BookAuthor>()
-            .HasOne(ba => ba.Book)
-            .WithMany(b => b.BookAuthors)
-            .HasForeignKey(ba => ba.BookId);
- 
-        modelBuilder.Entity<BookAuthor>()
-            .HasOne(ba => ba.Author)
-            .WithMany(a => a.BookAuthors)
-            .HasForeignKey(ba => ba.AuthorId);
         
-        modelBuilder.Entity<Book>()
-            .HasMany(b => b.Authors)
-            .WithMany(a => a.Books)
-            .UsingEntity(j => j.ToTable("Authors"));*/
     }
 }
